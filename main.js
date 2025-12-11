@@ -47,9 +47,14 @@ function sortear(){
     for (let i = 0; i < arrayNomes.length; i++) {
         escolhidos.set(arrayNomes[i], arraySorteado[i])
     }
-    let desafios = ['mimica','contrario','historia','desenho']
+    let desafios = [" ",'contrario', 'mimica', 'historia','desenho']
     escolhidos.forEach(e=>{
-        escoDesafios.set(e,desafios[Math.floor(Math.random() * desafios.length)])
+        let randomizando = Math.random() * desafios.length;
+        while(randomizando==" "){
+            randomizando = Math.random() * desafios.length
+        }
+        
+        escoDesafios.set(e,desafios[Math.floor(randomizando)])
     })
 
     console.log(escolhidos)
